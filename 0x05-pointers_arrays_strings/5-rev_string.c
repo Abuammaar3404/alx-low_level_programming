@@ -1,25 +1,28 @@
 #include "main.h"
 /**
- * more_numbers - prints 0 - 14
+ * rev_string - reverse the string.
+ * @s: pointer to string.
  *
  * Return: void.
  */
-void more_numbers(void)
+void rev_string(char *s)
 {
-	int i, j;
+	int i, j, k, temp;
 
 	i = 0;
-	while (i < 10)
+	while (s[i] != '\0')
 	{
-		j = 0;
-		while (j < 15)
-		{
-			if (j >= 10)
-				_putchar('0' + j / 10);
-			_putchar('0' + j % 10);
-			j++;
-		}
-		_putchar('\n');
 		i++;
+	}
+	k = 0;
+	j = i - 1;
+
+	while (k < j)
+	{
+		temp = s[k];
+		s[k] = s[j];
+		s[j] = temp;
+		k++;
+		j--;
 	}
 }
