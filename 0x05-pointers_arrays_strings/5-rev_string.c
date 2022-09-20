@@ -1,22 +1,25 @@
-#include <stdio.h>
 #include "main.h"
-
 /**
- * puts2 - prints every other character
- * @str: string
+ * more_numbers - prints 0 - 14
  *
- * Return: nothing
+ * Return: void.
  */
-
-void puts2(char *str)
+void more_numbers(void)
 {
-	int i = 0;
+	int i, j;
 
-	while (*(str + i) != '\0')
+	i = 0;
+	while (i < 10)
 	{
-		if (i % 2 == 0)
-			putchar(*(str + i));
+		j = 0;
+		while (j < 15)
+		{
+			if (j >= 10)
+				_putchar('0' + j / 10);
+			_putchar('0' + j % 10);
+			j++;
+		}
+		_putchar('\n');
 		i++;
 	}
-	putchar(10);
 }
